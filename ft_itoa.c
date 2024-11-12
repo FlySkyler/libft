@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:15:03 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/12 15:17:33 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:37:20 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ char	*ft_itoa(int n)
 	if (str == NULL)
 		return (NULL);
 	nb = ft_nb(n);
-	if (nb == 0)
-		str[i++] = '0';
+	if (nb < 0)
+		str[i++] = '-';
 	while (nb > 0)
 	{
 		str[i++] = (nb % 10) + '0';
@@ -81,4 +81,11 @@ char	*ft_itoa(int n)
 	str[i] = '\0';
 	ft_reverse(str, sign, i - 1);
 	return (str);
+}
+
+int	main(void)
+{
+	int n = -9123;
+	printf("%s\n", ft_itoa(n));
+	return (0);
 }

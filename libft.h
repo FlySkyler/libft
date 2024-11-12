@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:25:15 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/12 16:29:21 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:30:00 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,5 @@ char						*ft_substr(const char *str, unsigned int start,
 								t_size len);
 char						*ft_strjoin(const char *s1, const char *s2);
 void						*ft_calloc(t_size count, t_size size);
+char						*ft_itoa(int n);
 #endif

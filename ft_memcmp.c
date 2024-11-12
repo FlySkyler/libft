@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:49:28 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/08 16:45:33 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:49:46 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@ int	ft_memcmp(const void *ptr1, const void *ptr2, t_size num)
 	unsigned char	*str2;
 	t_size			i;
 
+	i = 0;
 	str1 = (unsigned char *)ptr1;
 	str2 = (unsigned char *)ptr2;
-	while (str1[i] == str2[i] && i < num)
+	while (i < num)
 	{
+		if (str1[i] != str2[i])
+			return ((int)(str1[i] - str2[i]));
 		i++;
 	}
-	return ((int)(str1[i] - str2[i]));
+	return (0);
 }

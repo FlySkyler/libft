@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:28:03 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/08 15:25:56 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:30:41 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void	*ft_memcpy(void *dst, const void *src, t_size n)
 {
-	t_size	i;
-	char	*str;
-	char	*str2;
+	t_size				i;
+	unsigned char		*str;
+	const unsigned char	*str2;
 
-	str = (char *)dst;
-	str2 = (char *)src;
+	if (!dst && !src)
+		return (dst);
+	str = (unsigned char *)dst;
+	str2 = (const unsigned char *)src;
 	i = 0;
 	while (i < n)
 	{

@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 10:07:46 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/12 10:19:12 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:32:24 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
 	str = malloc(i + j + 1);
+	if (str == NULL)
+		return (NULL);
 	i = 0;
 	j = 0;
 	while (s1[i])

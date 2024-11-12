@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:02:30 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/12 10:58:21 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:36:44 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (char)c)
 		{
 			return ((char *)s);
 		}
-		else
-			s++;
+		s++;
+	}
+	if ((char)c == '\0')
+	{
+		return ((char *)s);
 	}
 	return (0);
 }

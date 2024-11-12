@@ -6,35 +6,32 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:45:36 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/12 16:31:06 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:22:16 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_size	ft_strlcat(char *src, const char *dest, t_size n)
+t_size	ft_strlcat(char *dst, const char *src, t_size n)
 {
+	t_size	dst_len;
+	t_size	src_len;
 	t_size	i;
-	t_size	j;
-	t_size	k;
-	char *str;
 
-	str = (char *)dest;
+	dst_len = 0;
+	while (dst[dst_len] && dst_len < n)
+		dst_len++;
+	src_len = 0;
+	while (src[src_len])
+		src_len++;
+	if (n <= dst_len)
+		return (n + src_len);
 	i = 0;
-	j = 0;
-	k = 0;
-	while (str[i] && i < n)
-		i++;
-	while (src[j])
-		j++;
-	if (n == 0)
-		return (j);
-	while (src[k] && i + k < n - 1)
+	while (src[i] && (dst_len + i) < (n - 1))
 	{
-		str[i + k] = src[k];
-		k++;
+		dst[dst_len + i] = src[i];
+		i++;
 	}
-	if ((i + k) < n)
-		str[i + k] = '\0';
-	return (i + j);
+	dst[dst_len + i] = '\0';
+	return (dst_len + src_len);
 }

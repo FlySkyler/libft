@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 10:01:45 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/12 11:50:57 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:59:27 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,19 @@ char	*ft_substr(const char *str, unsigned int start, t_size len)
 {
 	char			*newstr;
 	unsigned int	i;
+	t_size			str_len;
 
-	i = 0;
-	start -= 1;
+	if (!str)
+		return (0);
+	str_len = ft_strlen(str);
+	if (start >= str_len)
+		return (ft_strdup(""));
+	if (len > str_len - start)
+		len = str_len - start;
 	newstr = malloc(len + 1);
 	if (newstr == NULL)
 		return (NULL);
+	i = 0;
 	while (i < len)
 	{
 		newstr[i] = str[start + i];

@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:25:15 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/08 17:19:47 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/12 16:29:21 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void						ft_bzero(void *s, t_size n);
 void						*ft_memcpy(void *dst, const void *src, t_size n);
 void						*ft_memmove(void *dst, const void *src, t_size len);
 t_size						ft_strlcpy(char *src, const char *dst, t_size n);
-t_size						ft_strlcat(char *src, const char *dst, t_size n);
+t_size						ft_strlcat(char *src, const char *dest, t_size n);
 int							ft_toupper(int c);
 int							ft_tolower(int c);
 char						*ft_strchr(const char *s, int c);
@@ -39,4 +39,9 @@ int							ft_memcmp(const void *ptr1, const void *ptr2,
 								t_size num);
 char						*ft_strnstr(const char *big, const char *little,
 								t_size len);
+char						*ft_strdup(const char *s);
+char						*ft_substr(const char *str, unsigned int start,
+								t_size len);
+char						*ft_strjoin(const char *s1, const char *s2);
+void						*ft_calloc(t_size count, t_size size);
 #endif

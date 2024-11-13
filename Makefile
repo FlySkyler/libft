@@ -33,6 +33,9 @@ SRCS = ft_isalpha.c \
        ft_isalnum.c \
        ft_itoa.c \
        ft_strtrim.c \
+       ft_putnbr.c \
+       ft_putchar.c \
+       ft_putstr.c \
        
 # Fichiers objets
 OBJS = $(SRCS:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:02:40 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/12 10:20:12 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/13 14:26:06 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s)
 	int		i;
 
 	i = ft_strlen(s);
-	str = malloc(i + 1);
+	str = ft_calloc(i + 1, sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	i = 0;

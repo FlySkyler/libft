@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:15:03 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/13 12:05:48 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/13 14:26:40 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*ft_itoa(int n)
 		return (str = ft_strdup("0"));
 	i = 0;
 	len = ft_length(n);
-	str = malloc(len + 1);
+	str = ft_calloc(len + 1, sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	if (n < 0)

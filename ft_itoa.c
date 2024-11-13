@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:15:03 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/12 19:37:20 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/13 11:13:58 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,6 @@ void	ft_reverse(char *str, int start, int end)
 		end--;
 	}
 }
-
-int	ft_sign(int n)
-{
-	if (n < 0)
-		return (1);
-	return (0);
-}
-
 int	ft_nb(int n)
 {
 	if (n < 0)
@@ -58,34 +50,35 @@ int	ft_nb(int n)
 
 char	*ft_itoa(int n)
 {
-	int				len;
-	int				sign;
-	char			*str;
-	int				i;
-	unsigned int	nb;
+	int		len;
+	char	*str;
+	int		i;
+	int		nb;
 
-	sign = 0;
 	i = 0;
 	len = ft_length(n);
 	str = malloc(len + 1);
 	if (str == NULL)
 		return (NULL);
-	nb = ft_nb(n);
-	if (nb < 0)
+	if (n < 0)
 		str[i++] = '-';
+	nb = ft_nb(n);
 	while (nb > 0)
 	{
 		str[i++] = (nb % 10) + '0';
 		nb /= 10;
 	}
 	str[i] = '\0';
-	ft_reverse(str, sign, i - 1);
+	if (n < 0)
+		ft_reverse(str, 1, i - 1);
+	else
+		ft_reverse(str, 0, i - 1);
 	return (str);
 }
 
 int	main(void)
 {
-	int n = -9123;
+	int n = -2147483648;
 	printf("%s\n", ft_itoa(n));
 	return (0);
 }

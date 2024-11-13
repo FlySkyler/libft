@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:25:15 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/13 12:28:21 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/13 12:36:50 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,5 @@ char						*ft_itoa(int n);
 void						ft_putstr_fd(char *s, int fd);
 void						ft_putnbr_fd(int n, int fd);
 void						ft_putchar_fd(char c, int fd);
+char						*ft_strtrim(const char *s1, const char *set);
 #endif

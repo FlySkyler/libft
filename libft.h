@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:25:15 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/13 17:50:25 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:55:18 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 # define LIBFT_H
 
 typedef unsigned long int	t_size;
+typedef struct s_list
+{
+	void					*content;
+	struct s_list			*next;
+}							t_list;
 int							ft_isalnum(int c);
 int							ft_isalpha(int c);
 int							ft_isdigit(int c);
@@ -51,4 +56,8 @@ void						ft_putchar_fd(char c, int fd);
 char						*ft_strtrim(const char *s1, const char *set);
 void						ft_putendl_fd(char *s, int fd);
 char						**ft_split(char *str, char c);
+char						*ft_strmapi(const char *s, char (*f)(unsigned int,
+									char));
+char						*ft_striteri(char *s, void (*f)(unsigned int,
+									char *));
 #endif

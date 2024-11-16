@@ -1,11 +1,10 @@
-# Nom du compilateur et options
+.PHONY: all clean fclean re
+
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-# Nom de la bibliothèque
 NAME = libft.a
 
-# Fichiers sources
 SRCS = ft_isalpha.c \
        ft_isdigit.c \
        ft_isascii.c \
@@ -39,29 +38,24 @@ SRCS = ft_isalpha.c \
        ft_strtrim.c \
        ft_putendl_fd.c \
        ft_split.c \
+       ft_strmapi.c \
+       ft_striteri.c \
        
-# Fichiers objets
 OBJS = $(SRCS:.c=.o)
 
-# Règle par défaut
 all: $(NAME)
 
-# Création de la bibliothèque
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-# Compilation des fichiers objets
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Nettoyage des fichiers objets
 clean:
 	rm -f $(OBJS)
 
-# Nettoyage complet
 fclean: clean
 	rm -f $(NAME)
 
-# Recompilation complète
 re: fclean all

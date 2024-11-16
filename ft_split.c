@@ -6,11 +6,12 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:11:33 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/13 17:48:11 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:01:21 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 int	count_words(char *str, char c)
 {
@@ -33,17 +34,24 @@ int	count_words(char *str, char c)
 	return (count);
 }
 
-char	**ft_split(char *str, char c)
+void	free_tab(char **tab)
 {
-	char	**tab;
-	int		i;
-	int		j;
-	int		k;
+	int	i;
 
-	tab = ft_calloc(count_words(str, c) + 1, sizeof(char *));
-	if (!tab)
-		return (0);
 	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}
+
+char	**oui(char *str, char c, char **tab, int i)
+{
+	int	j;
+	int	k;
+
 	j = 0;
 	while (str[i])
 	{
@@ -54,7 +62,10 @@ char	**ft_split(char *str, char c)
 				k++;
 			tab[j] = ft_calloc(k + 1, sizeof(char));
 			if (!tab[j])
+			{
+				free_tab(tab);
 				return (0);
+			}
 			ft_strlcpy(tab[j], &str[i], k + 1);
 			j++;
 			i += k;
@@ -62,5 +73,18 @@ char	**ft_split(char *str, char c)
 		else
 			i++;
 	}
+	return (tab);
+}
+
+char	**ft_split(char *str, char c)
+{
+	char	**tab;
+	int		i;
+
+	i = 0;
+	tab = ft_calloc(count_words(str, c) + 1, sizeof(char *));
+	if (!tab)
+		return (0);
+	tab = oui(str, c, tab, i);
 	return (tab);
 }

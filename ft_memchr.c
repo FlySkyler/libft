@@ -6,15 +6,15 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:27:01 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/12 18:41:05 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:34:23 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, t_size n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	t_size			i;
+	size_t			i;
 	unsigned char	*str;
 	unsigned char	chr;
 

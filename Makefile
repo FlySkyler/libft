@@ -1,6 +1,6 @@
 .PHONY: all clean fclean re
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
@@ -49,7 +49,7 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-%.o: %.c
+%.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

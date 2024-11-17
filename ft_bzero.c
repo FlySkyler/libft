@@ -6,15 +6,15 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:24:28 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/08 18:20:16 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:01:50 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, t_size n)
+void	ft_bzero(void *s, size_t n)
 {
-	t_size	i;
+	size_t	i;
 	char	*str;
 
 	i = 0;

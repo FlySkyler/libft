@@ -6,16 +6,16 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:02:10 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/12 19:23:36 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:01:50 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_size	ft_strlcpy(char *dst, const char *src, t_size n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 {
-	t_size	i;
-	t_size	src_len;
+	size_t	i;
+	size_t	src_len;
 
 	src_len = 0;
 	while (src[src_len] != '\0')

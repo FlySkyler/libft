@@ -6,17 +6,17 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:45:36 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/12 19:22:16 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:01:50 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_size	ft_strlcat(char *dst, const char *src, t_size n)
+size_t	ft_strlcat(char *dst, const char *src, size_t n)
 {
-	t_size	dst_len;
-	t_size	src_len;
-	t_size	i;
+	size_t	dst_len;
+	size_t	src_len;
+	size_t	i;
 
 	dst_len = 0;
 	while (dst[dst_len] && dst_len < n)

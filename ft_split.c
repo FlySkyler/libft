@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:11:33 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/16 16:01:21 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:34:15 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	free_tab(char **tab)
 	free(tab);
 }
 
-char	**oui(char *str, char c, char **tab, int i)
+char	**cpysplit(char *str, char c, char **tab, int i)
 {
 	int	j;
 	int	k;
@@ -85,6 +85,6 @@ char	**ft_split(char *str, char c)
 	tab = ft_calloc(count_words(str, c) + 1, sizeof(char *));
 	if (!tab)
 		return (0);
-	tab = oui(str, c, tab, i);
+	tab = cpysplit(str, c, tab, i);
 	return (tab);
 }

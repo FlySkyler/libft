@@ -6,15 +6,15 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:21:43 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/08 17:10:14 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:01:50 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, t_size len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	t_size	i;
+	size_t	i;
 	char	*str;
 
 	i = 0;

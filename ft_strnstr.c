@@ -6,16 +6,16 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:21:56 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/12 15:40:03 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:01:50 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, t_size len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	t_size	i;
-	t_size	j;
+	size_t	i;
+	size_t	j;
 
 	if (little[0] == '\0')
 		return ((char *)big);

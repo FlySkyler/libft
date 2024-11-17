@@ -6,15 +6,15 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:28:03 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/12 19:30:41 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:01:50 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, t_size n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	t_size				i;
+	size_t				i;
 	unsigned char		*str;
 	const unsigned char	*str2;
 

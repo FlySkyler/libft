@@ -6,15 +6,15 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:03:24 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/05 15:50:31 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:01:50 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_size	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	t_size	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])

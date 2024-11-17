@@ -6,13 +6,13 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:36:36 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/13 17:32:22 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:01:50 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_copy(char *str, char *str2, t_size len)
+char	*ft_copy(char *str, char *str2, size_t len)
 {
 	while (len > 0)
 	{
@@ -22,9 +22,9 @@ char	*ft_copy(char *str, char *str2, t_size len)
 	return (str);
 }
 
-void	*ft_memmove(void *dst, const void *src, t_size len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	t_size	i;
+	size_t	i;
 	char	*str;
 	char	*str2;
 

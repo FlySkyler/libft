@@ -64,7 +64,10 @@ $(NAME): $(OBJS)
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(OBJS) $(BONUS_OBJS)
+bonus: .bonus
+
+.bonus : $(OBJS) $(BONUS_OBJS)
+	@touch .bonus
 	ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
 	ranlib $(NAME)
 
@@ -73,5 +76,6 @@ clean:
 
 fclean: clean
 	rm -f $(NAME) $(BONUS_OBJS)
+	rm -f .bonus
 
 re: fclean all

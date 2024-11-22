@@ -6,37 +6,38 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:40:20 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/17 21:48:21 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/22 15:28:42 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
-	int		i;
-	int		sign;
-	long	nb;
+	int		neg;
+	long	number;
 
-	nb = 0;
-	i = 0;
-	sign = 1;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	number = 0;
+	neg = 1;
+	while ((*str >= 9 && *str <= 13) || (*str == 32))
+		str++;
+	if ((*str) == 43 || *str == 45)
 	{
-		if (nptr[i++] == '-')
-			sign = -1;
+		if (*(str++) == 45)
+			neg = -1;
 	}
-	while (nptr[i] >= 48 && nptr[i] <= 57)
+	while (*str >= 48 && *str <= 57)
 	{
-		nb = nb * 10 + nptr[i] - 48;
-		i++;
-		if (nb > INT_MAX && sign != -1)
-			return (-1);
-		else if (nb < INT_MIN && sign == -1)
-			return (0);
+		if (number > (LONG_MAX - (*str - 48)) / 10)
+		{
+			if (neg == 1)
+				return (-1);
+			else
+				return (0);
+		}
+		number = number * 10 + (*str - 48);
+		str++;
 	}
-	return (sign * nb);
+	return ((int)number * neg);
 }

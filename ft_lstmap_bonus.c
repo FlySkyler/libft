@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 12:23:04 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/18 13:06:54 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/22 15:33:58 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
 	t_list	*temp;
+	void	*f_content;
 
 	if (lst == NULL)
 		return (NULL);
 	new = NULL;
 	while (lst != NULL)
 	{
-		temp = ft_lstnew(f(lst->content));
+		f_content = f(lst->content);
+		temp = ft_lstnew(f_content);
 		if (temp == NULL)
 		{
+			del(f_content);
 			ft_lstclear(&new, del);
 			return (NULL);
 		}

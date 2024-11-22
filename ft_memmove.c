@@ -6,7 +6,7 @@
 /*   By: antbonin <antbonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:36:36 by antbonin          #+#    #+#             */
-/*   Updated: 2024/11/17 16:01:50 by antbonin         ###   ########.fr       */
+/*   Updated: 2024/11/22 15:02:04 by antbonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*str;
 	char	*str2;
 
-	if (!dst && !src)
-		return (dst);
 	str = (char *)dst;
 	str2 = (char *)src;
 	i = 0;
